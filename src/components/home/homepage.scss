@@ -1,0 +1,22 @@
+.home_page {
+    padding: 20px 7%;
+    h1 {
+        margin-bottom: 20px;
+        font-size: 36px;
+        font-weight: 700;
+        text-align: center;
+    }
+    p {
+        text-align: center;
+        a {
+            white-space: nowrap;
+            text-decoration: underline;
+            &:hover {
+                color: #FF6E6E;
+            }
+        }
+        &:last-child {
+            margin-top: 20px;
+        }
+    }
+}

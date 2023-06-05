@@ -1,0 +1,103 @@
+.products_list {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    .products_item {
+        position: relative;
+        width: 23%;
+        padding: 20px 15px 100px;
+        margin: 0 1% 20px;
+        background-color: #fff;
+        border: 1px solid #0C0058;
+        cursor: pointer;
+        &:hover {
+            border-color: #FF6E6E;
+            color: #FF6E6E;
+        }
+        @media screen and (max-width: 900px) {
+            width: 48%;
+        }
+        @media screen and (max-width: 500px) {
+            width: 98%;
+        }
+        img {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 10px;
+            object-fit: contain;
+        }
+        .title {
+            font-size: 20px;
+        }
+        .category {
+            font-size: 12px;
+        }
+        .description {
+            padding: 10px 0;
+        }
+        .price {
+            font-size: 20px;
+            padding-bottom: 10px;
+        }
+        .btns {
+            position: absolute;
+            bottom: 0;
+            .btn {
+                margin-bottom: 10px;
+                &.detail_btn {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+.product_info {
+    position: relative;
+    padding: 20px 7% 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 10px;
+        object-fit: contain;
+    }
+    .title {
+        font-size: 24px;
+    }
+    .category {
+        font-size: 13px;
+    }
+    .description {
+        padding: 10px 0;
+        text-align: center;
+    }
+    .price {
+        font-size: 22px;
+        padding-bottom: 10px;
+    }
+    .btns {
+        position: absolute;
+        bottom: 0;
+        .btn {
+            width: fit-content;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            background-color: #0C0058;
+            color: #FF6E6E;
+            cursor: pointer;
+            &:hover {
+                background-color: #FF6E6E;
+                color: #0C0058;
+                font-weight: 600;
+            }
+            &.detail_btn {
+                display: block;
+            }
+        }
+    }
+}
