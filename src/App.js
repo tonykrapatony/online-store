@@ -42,11 +42,11 @@ function App() {
     <div className="App">
           <Header/>
           <Routes>
-            <Route exact path="/online-store" element={<Home/>} />
-            <Route path="/online-store/store" element={<Store/>} />
-            <Route path="/online-store/product" element={<Product/>} />
-            <Route path="/online-store/about" element={<About/>} />
-            <Route path="/online-store/cart" element={<Cart/>} />
+            <Route exact path="/" element={<Home/>} />
+            <Route path="/store" element={<Store/>} />
+            <Route path="/product" element={<Product/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/cart" element={<Cart/>} />
             <Route path="*" element={<Error/>} />
           </Routes>
     </div>
