@@ -7,46 +7,46 @@ import Error from './pages/Error';
 import "./app.scss";
 import Header from './components/header/Header';
 import Product from './pages/Product';
-// import { useEffect } from 'react';
-// import { addProductsToCartAction } from './store/cartReducer';
-// import { useDispatch, useSelector } from 'react-redux';
-// import saveStateToLocalStorage from './store/saveStateToLocalStorage';
+import { useEffect } from 'react';
+import { addProductsToCartAction } from './store/cartReducer';
+import { useDispatch, useSelector } from 'react-redux';
+import saveStateToLocalStorage from './store/saveStateToLocalStorage';
 
 function App() {
-  // const dispatch = useDispatch()
-  // const products = useSelector(state => state.products.products);
+  const dispatch = useDispatch()
+  const products = useSelector(state => state.products.products);
 
-  // useEffect(() => {
-  //   window.addEventListener("beforeunload", handleBeforeUnload);
+  useEffect(() => {
+    window.addEventListener("beforeunload", handleBeforeUnload);
 
-  //   return () => {
-  //     window.removeEventListener("beforeunload", handleBeforeUnload);
-  //   };
-  // });
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  });
 
-  // useEffect(() => {
-  //   let obj = JSON.parse(localStorage.getItem('reduxState'));
-  //   console.log(obj)
-  //   if (Object.keys(obj).length !== 0) {
-  //     for (let key in obj) {
-  //       dispatch(addProductsToCartAction(obj[key]));
-  //     }
-  //   }
-  // }, [dispatch])
+  useEffect(() => {
+    let obj = JSON.parse(localStorage.getItem('reduxState'));
+    console.log(obj)
+    if (obj && Object.keys(obj).length !== 0) {
+      for (let key in obj) {
+        dispatch(addProductsToCartAction(obj[key]));
+      }
+    }
+  }, [dispatch])
 
-  // const handleBeforeUnload = () => {
-  //   saveStateToLocalStorage(products);
-  // };
+  const handleBeforeUnload = () => {
+    saveStateToLocalStorage(products);
+  };
 
   return (
     <div className="App">
           <Header/>
           <Routes>
-            <Route exact path="/" element={<Home/>} />
-            <Route path="/store" element={<Store/>} />
-            <Route path="/product" element={<Product/>} />
-            <Route path="/about" element={<About/>} />
-            <Route path="/cart" element={<Cart/>} />
+            <Route exact path="/online-store" element={<Home/>} />
+            <Route path="/online-store/store" element={<Store/>} />
+            <Route path="/online-store/product" element={<Product/>} />
+            <Route path="/online-store/about" element={<About/>} />
+            <Route path="/online-store/cart" element={<Cart/>} />
             <Route path="*" element={<Error/>} />
           </Routes>
     </div>
